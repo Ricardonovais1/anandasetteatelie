@@ -1,0 +1,324 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Ateliê Ananda Sette — sistema visual
+   Linho, verde-sálvia, terracota. Costura, bordado, arteterapia têxtil.
+------------------------------------------------------------------- */
+
+@theme {
+  /* superfícies */
+  --color-linho: #f6f2ea;
+  --color-linho-2: #efe8dc;
+  --color-linho-3: #e6dccb;
+  --color-creme: #fcfaf5;
+
+  /* verdes */
+  --color-verde: #384030;
+  --color-verde-2: #4a5442;
+  --color-verde-3: #6b7563;
+  --color-sage: #689078;
+  --color-sage-2: #557a65;
+  --color-sage-cl: #a3c0ad;
+  --color-sage-pale: #dde7dc;
+  --color-teal: #3f8c7e;
+
+  /* vinho — Tecendo a Mulher Selvagem */
+  --color-vinho: #87012a;
+  --color-vinho-2: #6b0120;
+  --color-vinho-3: #a81a3c;
+  --color-vinho-cl: #e7b3bd;
+  --color-vinho-pale: #f4e2e4;
+
+  /* acentos quentes */
+  --color-terra: #b0603c;
+  --color-terra-2: #9a5030;
+  --color-terra-cl: #d99a76;
+  --color-ocre: #c8a24e;
+
+  /* tijolo — Costura Afetiva para Crianças */
+  --color-tijolo: #6e3a22;
+  --color-tijolo-cl: #eeb996;
+  --color-tijolo-pale: #f8e9de;
+
+  /* petróleo — Modelagem Descomplicada */
+  --color-petroleo: #234b48;
+  --color-petroleo-2: #2f6a63;
+  --color-petroleo-cl: #a8cfc8;
+  --color-petroleo-pale: #e3efec;
+
+  --font-display: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-dmsans), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-hoop: 50%;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --stitch: color-mix(in oklab, var(--color-verde) 32%, transparent);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-linho);
+    color: var(--color-verde-2);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.72;
+    letter-spacing: 0.004em;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  /* trama de linho: ruído fino + urdidura/trama quase imperceptíveis */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(56, 64, 48, 0.035) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(0deg, rgba(56, 64, 48, 0.03) 0 1px, transparent 1px 3px),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  }
+
+  h1, h2, h3, h4, blockquote {
+    font-family: var(--font-display);
+    color: var(--color-verde);
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.06;
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-sage) 40%, transparent);
+    color: var(--color-verde);
+  }
+
+  :focus-visible {
+    outline: 2px dashed var(--color-terra);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Etiqueta / olho-de-seção */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  /* Linha de alinhavo (running stitch) */
+  .stitch-line {
+    height: 1px;
+    background-image: linear-gradient(90deg, var(--stitch) 0 10px, transparent 10px 20px);
+    background-size: 20px 1px;
+    background-repeat: repeat-x;
+  }
+
+  .stitch-box {
+    border: 1px dashed color-mix(in oklab, var(--color-verde) 28%, transparent);
+  }
+
+  /* Botões */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    white-space: nowrap;
+    padding: 1rem 1.5rem;
+    border-radius: 999px;
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 0.25s ease, color 0.25s ease,
+                box-shadow 0.25s ease, border-color 0.25s ease;
+    will-change: transform;
+  }
+  @media (min-width: 640px) {
+    .btn { padding: 1.05rem 1.75rem; }
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: translateY(0); }
+
+  .btn-primary {
+    background: var(--color-verde);
+    color: var(--color-linho);
+    box-shadow: 0 1px 0 0 color-mix(in oklab, var(--color-verde) 60%, transparent);
+  }
+  .btn-primary:hover {
+    background: var(--color-sage-2);
+    box-shadow: 0 10px 24px -12px color-mix(in oklab, var(--color-verde) 70%, transparent);
+  }
+
+  .btn-terra {
+    background: var(--color-terra);
+    color: #fdf7f2;
+  }
+  .btn-terra:hover {
+    background: var(--color-terra-2);
+    box-shadow: 0 10px 24px -12px color-mix(in oklab, var(--color-terra) 70%, transparent);
+  }
+
+  .btn-ghost {
+    border: 1px solid color-mix(in oklab, var(--color-verde) 26%, transparent);
+    color: var(--color-verde);
+    background: transparent;
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-verde);
+    background: color-mix(in oklab, var(--color-verde) 5%, transparent);
+  }
+
+  .btn-vinho {
+    background: var(--color-vinho);
+    color: #fdf2f4;
+  }
+  .btn-vinho:hover {
+    background: var(--color-vinho-3);
+    box-shadow: 0 10px 24px -12px color-mix(in oklab, var(--color-vinho) 70%, transparent);
+  }
+
+  .btn-tijolo {
+    background: var(--color-tijolo);
+    color: #fdf3ec;
+  }
+  .btn-tijolo:hover {
+    background: var(--color-terra-2);
+    box-shadow: 0 10px 24px -12px color-mix(in oklab, var(--color-tijolo) 70%, transparent);
+  }
+
+  .btn-petroleo {
+    background: var(--color-petroleo);
+    color: #f0f7f5;
+  }
+  .btn-petroleo:hover {
+    background: var(--color-petroleo-2);
+    box-shadow: 0 10px 24px -12px color-mix(in oklab, var(--color-petroleo) 70%, transparent);
+  }
+
+  .btn-light {
+    background: var(--color-linho);
+    color: var(--color-verde);
+  }
+  .btn-light:hover { background: #fff; }
+
+  /* Link com alinhavo por baixo */
+  .link-stitch {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+  }
+  .link-stitch::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-image: linear-gradient(90deg, currentColor 0 5px, transparent 5px 10px);
+    background-size: 10px 1px;
+    opacity: 0;
+    transform: translateY(2px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background-size 0.35s ease;
+  }
+  .link-stitch:hover::after,
+  .link-stitch:focus-visible::after {
+    opacity: 0.9;
+    transform: none;
+    background-size: 8px 1px;
+  }
+
+  /* Moldura tipo bastidor de bordado */
+  .hoop {
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 7px #e4c9a8,
+      0 0 0 8px #c9a67f,
+      0 0 0 14px var(--color-linho),
+      0 24px 50px -28px rgba(56, 64, 48, 0.55);
+  }
+
+  /* Cartão de papel */
+  .card-paper {
+    background: var(--color-creme);
+    border: 1px solid color-mix(in oklab, var(--color-verde) 10%, transparent);
+    box-shadow: 0 1px 2px rgba(56, 64, 48, 0.04),
+                0 18px 40px -32px rgba(56, 64, 48, 0.5);
+  }
+}
+
+@layer utilities {
+  .display-xl { font-size: clamp(2.6rem, 5.8vw, 4.9rem); }
+  .display-l  { font-size: clamp(2rem, 3.7vw, 3.05rem); }
+  .display-m  { font-size: clamp(1.6rem, 2.6vw, 2.2rem); }
+
+  .u-container {
+    width: 100%;
+    max-width: 78rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+  @media (min-width: 1024px) {
+    .u-container { padding-inline: 2.5rem; }
+  }
+
+  .text-balance { text-wrap: balance; }
+}
+
+/* Revelação suave ao rolar.
+ *
+ * O conteúdo é visível por padrão. Só some para ser animado quando o
+ * <html> ganha `data-revelar`, o que acontece no script de `layout.tsx`
+ * e é desfeito sozinho se o observador não assumir. Assim, JS quebrado,
+ * bloqueado ou atrapalhado por extensão nunca deixa a página em branco. */
+html[data-revelar] [data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+html[data-revelar] [data-reveal="in"] {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html[data-revelar] [data-reveal] { opacity: 1; transform: none; }
+}
+
+/* Faixa rolante */
+@keyframes deslizar {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

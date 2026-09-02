@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+.DS_Store
+*.log
+.env*
+next-env.d.ts
+*.tsbuildinfo
+
+# Documentos internos — não fazem parte do código do site
+DNS.docx
+~$*.docx
+Plano-de-publicacao-anandasette.pdf

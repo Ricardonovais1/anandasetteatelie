@@ -1,0 +1,108 @@
+# Redirecionamentos do site antigo (WordPress) para o site novo.
+# Gerado a partir das 43 URLs publicadas no blog_id 6 do multisite.
+#
+# ATENÇÃO: neste formato o caractere # inicia um comentário, então
+# destinos com âncora (/#caminhos) NÃO funcionam — viram apenas /.
+# Por isso as institucionais apontam para a home.
+#
+# /costura-afetiva-para-criancas/ e /modelagem-descomplicada-afetiva/
+# não aparecem aqui: já são páginas reais do site novo.
+
+# Páginas de venda antigas da modelagem
+/modelagem-descomplicada-afetiva-curso-online                      /modelagem-descomplicada-afetiva/    301
+/modelagem-descomplicada-afetiva-curso-online/                     /modelagem-descomplicada-afetiva/    301
+/curso-modelagem-descomplicada-afetiva                             /modelagem-descomplicada-afetiva/    301
+/curso-modelagem-descomplicada-afetiva/                            /modelagem-descomplicada-afetiva/    301
+/curso-de-modelagem-ananda-sette                                   /modelagem-descomplicada-afetiva/    301
+/curso-de-modelagem-ananda-sette/                                  /modelagem-descomplicada-afetiva/    301
+/7-passos-da-modelagem-de-roupas                                   /modelagem-descomplicada-afetiva/    301
+/7-passos-da-modelagem-de-roupas/                                  /modelagem-descomplicada-afetiva/    301
+
+# Iscas e eventos de modelagem
+/aulao-modelagem-descomplicada-afetiva                             /modelagem-descomplicada-afetiva/    301
+/aulao-modelagem-descomplicada-afetiva/                            /modelagem-descomplicada-afetiva/    301
+/solicitar-aulao-de-modelagem-descomplicada-afetiva                /modelagem-descomplicada-afetiva/    301
+/solicitar-aulao-de-modelagem-descomplicada-afetiva/               /modelagem-descomplicada-afetiva/    301
+/obrigada-por-solicitar-a-aula-de-modelagem-descomplicada-afetiva  /modelagem-descomplicada-afetiva/    301
+/obrigada-por-solicitar-a-aula-de-modelagem-descomplicada-afetiva/ /modelagem-descomplicada-afetiva/    301
+/pesquisa-modelagem-descomplicada-afetiva                          /modelagem-descomplicada-afetiva/    301
+/pesquisa-modelagem-descomplicada-afetiva/                         /modelagem-descomplicada-afetiva/    301
+/solicitar-ebook-10-dicas-de-modelagem                             /modelagem-descomplicada-afetiva/    301
+/solicitar-ebook-10-dicas-de-modelagem/                            /modelagem-descomplicada-afetiva/    301
+/tribo-de-modelagem-no-telegram                                    /modelagem-descomplicada-afetiva/    301
+/tribo-de-modelagem-no-telegram/                                   /modelagem-descomplicada-afetiva/    301
+
+# Posts de blog sobre modelagem e costura de roupas
+/reguas-de-modelagem-para-que-servem-e-quais-as-melhores           /modelagem-descomplicada-afetiva/    301
+/reguas-de-modelagem-para-que-servem-e-quais-as-melhores/          /modelagem-descomplicada-afetiva/    301
+/maquina-de-costura-com-o-melhor-custo-beneficio                   /modelagem-descomplicada-afetiva/    301
+/maquina-de-costura-com-o-melhor-custo-beneficio/                  /modelagem-descomplicada-afetiva/    301
+
+# Costura para crianças
+/costura-para-criancas-arte-educadores                             /costura-afetiva-para-criancas/      301
+/costura-para-criancas-arte-educadores/                            /costura-afetiva-para-criancas/      301
+/costura-para-criancas                                             /costura-afetiva-para-criancas/      301
+/costura-para-criancas/                                            /costura-afetiva-para-criancas/      301
+/aula-de-costura-para-criancas                                     /costura-afetiva-para-criancas/      301
+/aula-de-costura-para-criancas/                                    /costura-afetiva-para-criancas/      301
+/filtrando-os-sonhos                                               /costura-afetiva-para-criancas/      301
+/filtrando-os-sonhos/                                              /costura-afetiva-para-criancas/      301
+/costura-para-criancas-estrela-de-natal                            /costura-afetiva-para-criancas/      301
+/costura-para-criancas-estrela-de-natal/                           /costura-afetiva-para-criancas/      301
+/http-amigoviolao.com-anandasette-como-fazer-casa-de-botao         /costura-afetiva-para-criancas/      301
+/http-amigoviolao.com-anandasette-como-fazer-casa-de-botao/        /costura-afetiva-para-criancas/      301
+/ebook-trabalhos-manuais                                           /costura-afetiva-para-criancas/      301
+/ebook-trabalhos-manuais/                                          /costura-afetiva-para-criancas/      301
+/obrigada-ebook-trabalhos-manuais-criancas                         /costura-afetiva-para-criancas/      301
+/obrigada-ebook-trabalhos-manuais-criancas/                        /costura-afetiva-para-criancas/      301
+
+# Institucionais (o destino seria uma âncora; ver aviso no topo)
+/home                                                              /                                    301
+/home/                                                             /                                    301
+/home-lancamento                                                   /                                    301
+/home-lancamento/                                                  /                                    301
+/sobre                                                             /                                    301
+/sobre/                                                            /                                    301
+/cursos                                                            /                                    301
+/cursos/                                                           /                                    301
+/seu-perfil                                                        /                                    301
+/seu-perfil/                                                       /                                    301
+/cursos-ananda-sette-modelo                                        /                                    301
+/cursos-ananda-sette-modelo/                                       /                                    301
+/blog                                                              /                                    301
+/blog/                                                             /                                    301
+/ananda-ao-vivo                                                    /                                    301
+/ananda-ao-vivo/                                                   /                                    301
+/lista-de-fornecedores                                             /                                    301
+/lista-de-fornecedores/                                            /                                    301
+
+# Páginas de obrigado
+/obrigado-pelo-download                                            /                                    301
+/obrigado-pelo-download/                                           /                                    301
+/obrigado-cartao                                                   /                                    301
+/obrigado-cartao/                                                  /                                    301
+/obrigado-boletos                                                  /                                    301
+/obrigado-boletos/                                                 /                                    301
+
+# Loja e conta — a venda agora é na Hotmart
+/loja                                                              /                                    301
+/loja/                                                             /                                    301
+/carrinho                                                          /                                    301
+/carrinho/                                                         /                                    301
+/finalizar-compra                                                  /                                    301
+/finalizar-compra/                                                 /                                    301
+/cadastrar                                                         /                                    301
+/cadastrar/                                                        /                                    301
+/rm_login                                                          /                                    301
+/rm_login/                                                         /                                    301
+/rm_submissions                                                    /                                    301
+/rm_submissions/                                                   /                                    301
+
+# Contato direto
+/grupo-vip-whatsapp                                                https://wa.me/5531985718801          301
+/grupo-vip-whatsapp/                                               https://wa.me/5531985718801          301
+
+# Restos do WordPress
+/wp-login.php                                                      /                                    301
+/feed                                                              /                                    301
+/feed/                                                             /                                    301
