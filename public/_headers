@@ -1,19 +1,13 @@
 # Cabeçalhos do Cloudflare Pages.
-# Regras mais específicas primeiro; /* se aplica a todo o resto.
+#
+# O Pages NÃO deixa a regra mais específica vencer: ele SOMA os cabeçalhos de
+# todas as regras que casam com a URL, juntando valores repetidos por vírgula.
+# Por isso o /* vem primeiro e as regras seguintes apagam o Cache-Control
+# herdado com "! Cache-Control" antes de definir o seu. Sem isso os assets
+# saíam com "max-age=31536000, immutable, max-age=0, must-revalidate".
 
-# Os arquivos de /_next/static/ têm hash no nome: mudam de endereço a cada
-# build, então podem ser guardados para sempre.
-/_next/static/*
-  Cache-Control: public, max-age=31536000, immutable
-
-# Imagens e cartões de compartilhamento: um mês, revalidando em segundo plano.
-/img/*
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
-
-/og/*
-  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
-
-# HTML sempre revalidado, para uma correção de preço entrar no ar na hora.
+# Padrão do site: HTML sempre revalidado, para uma correção de preço entrar no
+# ar na hora. Os cabeçalhos de segurança valem para tudo.
 /*
   Cache-Control: public, max-age=0, must-revalidate
   X-Content-Type-Options: nosniff
@@ -21,3 +15,18 @@
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+# Os arquivos de /_next/static/ têm hash no nome: mudam de endereço a cada
+# build, então podem ser guardados para sempre.
+/_next/static/*
+  ! Cache-Control
+  Cache-Control: public, max-age=31536000, immutable
+
+# Imagens e cartões de compartilhamento: um mês, revalidando em segundo plano.
+/img/*
+  ! Cache-Control
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/og/*
+  ! Cache-Control
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
