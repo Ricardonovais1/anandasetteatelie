@@ -5,8 +5,11 @@ import type { Curso } from "./tipos";
    cabeçalho de `tipos.ts` para as fontes exatas.
 
    ⚠ CONFERIR antes de publicar:
-   · Preços e links de checkout são os de 2022. Os links `off=` apontam
-     para ofertas específicas da Hotmart; confirme se ainda valem.
+   · Preços conferidos nos dois checkouts em 4/9/2026: ambos os cursos
+     custam R$ 289,00 à vista ou 12x de R$ 29,89. Os links `off=` estão
+     no ar e funcionando.
+   · `precoDe` da Modelagem é R$ 447,00 — o preço de venda anunciado no
+     site antigo. Substituiu o R$ 897,00, que já era âncora em 2022.
    · A garantia está em 30 dias, como você pediu. A página antiga de
      Modelagem anunciava 15 dias.
    · Os vídeos de vendas no Vimeo são de 2018–2021: confirme se ainda
@@ -246,8 +249,8 @@ export const costuraCriancas: Curso = {
   ],
   oferta: {
     checkout: "https://pay.hotmart.com/A27711314Q?off=umg2mxl6&checkoutMode=10",
-    precoAVista: "R$ 497,00", // ⚠ CONFERIR
-    parcelas: "12x de R$ 48,42", // ⚠ CONFERIR
+    precoAVista: "R$ 289,00",
+    parcelas: "12x de R$ 29,89",
     acesso: "Acesso vitalício",
     garantiaDias: GARANTIA,
     botao: "Sim! Quero encantar as crianças com a costura",
@@ -546,9 +549,9 @@ export const modelagem: Curso = {
   ],
   oferta: {
     checkout: "https://pay.hotmart.com/X41477412M?off=yzqn5a4u&checkoutMode=10",
-    precoDe: "R$ 897,00", // ⚠ CONFERIR
-    precoAVista: "R$ 447,00", // ⚠ CONFERIR
-    parcelas: "12x de R$ 44,61", // ⚠ CONFERIR
+    precoDe: "R$ 447,00",
+    precoAVista: "R$ 289,00",
+    parcelas: "12x de R$ 29,89",
     acesso: "Acesso vitalício",
     garantiaDias: GARANTIA,
     botao: "Sim! Quero dominar a modelagem",
