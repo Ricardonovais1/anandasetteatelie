@@ -22,7 +22,7 @@ export const tecerAlma: ResumoJornada = {
   fatos: [
     ["Encontros", "16 encontros semanais"],
     ["Duração", "3 horas · sextas, 9h às 12h"],
-    ["Turma 2026", "3 de abril a 24 de julho"],
+    ["Próxima turma", "2027 · lista de espera aberta"],
   ],
   imagem: {
     src: "/img/roda-mesa.webp",
@@ -42,7 +42,7 @@ export const mulherSelvagem: ResumoJornada = {
   fatos: [
     ["Encontros", "38 encontros · introdução + 15 capítulos"],
     ["Duração", "3 horas · sextas, 14h30 às 17h30"],
-    ["Turma 2026", "13 de março a 11 de dezembro"],
+    ["Próxima turma", "2027 · lista de espera aberta"],
   ],
   imagem: {
     src: "/img/livro-lobos.webp",

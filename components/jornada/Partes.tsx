@@ -26,6 +26,7 @@ export function JornadaHero({
   paragrafos,
   fatos,
   imagem,
+  acao = { href: contato.whatsappTexto, rotulo: "Quero saber mais" },
 }: ComTema & {
   eyebrow: string;
   nome: string;
@@ -33,6 +34,7 @@ export function JornadaHero({
   paragrafos: string[];
   fatos: [string, string][];
   imagem: { src: string; alt: string; w: number; h: number };
+  acao?: { href: string; rotulo: string };
 }) {
   const t = temas[tema];
 
@@ -91,13 +93,13 @@ export function JornadaHero({
             <a
               data-reveal
               style={{ ["--reveal-delay" as string]: "200ms" }}
-              href={contato.whatsappTexto}
+              href={acao.href}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-light mt-9 w-full sm:w-auto"
             >
               <IconeWhatsApp className="h-[18px] w-[18px]" />
-              Quero saber mais
+              {acao.rotulo}
               <Seta className="hidden h-4 w-4 sm:block" />
             </a>
           </div>
@@ -273,12 +275,24 @@ export function Citacao({
   );
 }
 
-/** Funcionamento do grupo + chamada para o WhatsApp. */
+/** Funcionamento do grupo + chamada de inscrição.
+ *
+ *  Por padrão a chamada é o WhatsApp da Ananda. Quando a turma do ano já
+ *  começou, a página passa `acao` apontando para a lista de espera. */
 export function Funcionamento({
   tema,
   fatos,
   observacao,
-}: ComTema & { fatos: [string, string][]; observacao: string }) {
+  acao = {
+    href: contato.whatsappTexto,
+    rotulo: "Consultar vagas e valores",
+    nota: "A Ananda responde pessoalmente.",
+  },
+}: ComTema & {
+  fatos: [string, string][];
+  observacao: string;
+  acao?: { href: string; rotulo: string; nota: string };
+}) {
   const t = temas[tema];
 
   return (
@@ -312,17 +326,15 @@ export function Funcionamento({
           {observacao}
         </p>
         <a
-          href={contato.whatsappTexto}
+          href={acao.href}
           target="_blank"
           rel="noopener noreferrer"
           className={`${t.botaoSolido} mt-7 w-full sm:w-auto sm:self-start`}
         >
           <IconeWhatsApp className="h-[18px] w-[18px]" />
-          Consultar vagas e valores
+          {acao.rotulo}
         </a>
-        <p className="mt-4 text-[0.82rem] text-verde-3">
-          A Ananda responde pessoalmente.
-        </p>
+        <p className="mt-4 text-[0.82rem] text-verde-3">{acao.nota}</p>
       </div>
     </div>
   );

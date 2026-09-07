@@ -14,13 +14,14 @@ import {
   Secao,
 } from "@/components/jornada/Partes";
 import { mulherSelvagem, tecerAlma } from "@/components/jornada/dados";
+import { listaEspera } from "@/components/site/dados";
 
 const tema = "verde" as const;
 
 export const metadata: Metadata = {
   title: "Jornada Tecer Alma — arteterapia têxtil para mulheres",
   description:
-    "Grupo de arteterapia têxtil conduzido por Ananda Sette em Belo Horizonte. 16 encontros semanais de costura, bordado e partilha entre mulheres. Turma 2026, de abril a julho.",
+    "Grupo de arteterapia têxtil conduzido por Ananda Sette em Belo Horizonte. 16 encontros semanais de costura, bordado e partilha entre mulheres. Lista de espera aberta para a turma de 2027.",
   alternates: { canonical: "/jornada-tecer-alma/" },
   openGraph: {
     type: "article",
@@ -59,9 +60,10 @@ const funcionamento: [string, string][] = [
   ["Encontros", "16 encontros semanais"],
   ["Frequência", "1 vez por semana, às sextas-feiras"],
   ["Duração", "3 horas por encontro, das 9h às 12h"],
-  ["Turma 2026", "De 3 de abril a 24 de julho"],
   ["Onde", "No ateliê, em Belo Horizonte · MG"],
   ["Pré-requisito", "Nenhum — não é preciso saber costurar"],
+  ["Turma 2026", "Encerrada — de 27 de março a 24 de julho"],
+  ["Próxima turma", "2027 · datas a confirmar"],
 ];
 
 export default function JornadaTecerAlma() {
@@ -71,7 +73,7 @@ export default function JornadaTecerAlma() {
       <main id="conteudo">
         <JornadaHero
           tema={tema}
-          eyebrow="Arteterapia têxtil · Turma 2026"
+          eyebrow="Arteterapia têxtil · Próxima turma em 2027"
           nome={tecerAlma.nome}
           subtitulo={tecerAlma.subtitulo}
           paragrafos={[
@@ -80,6 +82,7 @@ export default function JornadaTecerAlma() {
           ]}
           fatos={tecerAlma.fatos}
           imagem={tecerAlma.imagem}
+          acao={{ href: listaEspera, rotulo: "Entrar na lista de espera" }}
         />
 
         <Secao
@@ -241,12 +244,17 @@ export default function JornadaTecerAlma() {
           tema={tema}
           id="funcionamento"
           eyebrow="Funcionamento do grupo"
-          titulo="Como a turma 2026 acontece"
+          titulo="Como a jornada acontece"
         >
           <Funcionamento
             tema={tema}
             fatos={funcionamento}
-            observacao="As vagas são limitadas para manter a roda pequena o bastante para todo mundo ser ouvido. Fale com a Ananda para saber sobre valores, materiais e as vagas ainda abertas."
+            observacao="A turma de 2026 já se encerrou. As vagas são limitadas para manter a roda pequena o bastante para todo mundo ser ouvido — quem entra na lista de espera é avisada primeiro, com as datas e os valores da turma de 2027."
+            acao={{
+              href: listaEspera,
+              rotulo: "Entrar na lista de espera",
+              nota: "A Ananda avisa assim que as inscrições abrirem.",
+            }}
           />
         </Secao>
 

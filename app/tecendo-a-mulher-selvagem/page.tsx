@@ -14,20 +14,21 @@ import {
   Secao,
 } from "@/components/jornada/Partes";
 import { mulherSelvagem, tecerAlma } from "@/components/jornada/dados";
+import { listaEspera } from "@/components/site/dados";
 
 const tema = "vinho" as const;
 
 export const metadata: Metadata = {
   title: "Tecendo a Mulher Selvagem — grupo de arteterapia têxtil",
   description:
-    "Um ano de travessia pelos contos de Mulheres que Correm com os Lobos, de Clarissa Pinkola Estés, vivenciados pela arteterapia têxtil junguiana. 38 encontros em Belo Horizonte, turma 2026.",
+    "Um ano de travessia pelos contos de Mulheres que Correm com os Lobos, de Clarissa Pinkola Estés, vivenciados pela arteterapia têxtil junguiana. 38 encontros em Belo Horizonte. Lista de espera aberta para 2027.",
   alternates: { canonical: "/tecendo-a-mulher-selvagem/" },
   openGraph: {
     type: "article",
     locale: "pt_BR",
     title: "Tecendo a Mulher Selvagem — arteterapia têxtil junguiana",
     description:
-      "Ler o livro é um passo importante no autoconhecimento de uma mulher. Vivenciá-lo em grupo é ainda mais potente. 38 encontros, de março a dezembro de 2026.",
+      "Ler o livro é um passo importante no autoconhecimento de uma mulher. Vivenciá-lo em grupo é ainda mais potente. 38 encontros ao longo de um ano inteiro.",
     images: [{ url: "/og/tecendo-a-mulher-selvagem.jpg", width: 1200, height: 630, alt: "Ateliê Ananda Sette" }],
   },
 };
@@ -63,8 +64,9 @@ const funcionamento: [string, string][] = [
   ["Encontros", "38 encontros presenciais"],
   ["Frequência", "1 vez por semana, às sextas-feiras"],
   ["Duração", "3 horas por encontro, das 14h30 às 17h30"],
-  ["Turma 2026", "De 13 de março a 11 de dezembro"],
   ["Onde", "No ateliê, em Belo Horizonte · MG"],
+  ["Turma 2026", "Em andamento — de 13 de março a 11 de dezembro"],
+  ["Próxima turma", "2027 · datas a confirmar"],
 ];
 
 export default function TecendoAMulherSelvagem() {
@@ -74,7 +76,7 @@ export default function TecendoAMulherSelvagem() {
       <main id="conteudo">
         <JornadaHero
           tema={tema}
-          eyebrow="Arteterapia têxtil · Turma 2026"
+          eyebrow="Arteterapia têxtil · Próxima turma em 2027"
           nome={mulherSelvagem.nome}
           subtitulo={mulherSelvagem.subtitulo}
           paragrafos={[
@@ -83,6 +85,7 @@ export default function TecendoAMulherSelvagem() {
           ]}
           fatos={mulherSelvagem.fatos}
           imagem={mulherSelvagem.imagem}
+          acao={{ href: listaEspera, rotulo: "Entrar na lista de espera" }}
         />
 
         <Secao
@@ -242,12 +245,17 @@ export default function TecendoAMulherSelvagem() {
           tema={tema}
           id="funcionamento"
           eyebrow="Funcionamento do grupo"
-          titulo="Como a turma 2026 acontece"
+          titulo="Como a jornada acontece"
         >
           <Funcionamento
             tema={tema}
             fatos={funcionamento}
-            observacao="As vagas são limitadas e a turma percorre o ano inteiro junta. Fale com a Ananda para saber sobre valores, materiais e as vagas ainda abertas."
+            observacao="A turma de 2026 já está a caminho do último capítulo e percorre o ano inteiro junta — por isso não recebe entradas no meio do percurso. Quem entra na lista de espera é avisada primeiro, com as datas e os valores da turma de 2027."
+            acao={{
+              href: listaEspera,
+              rotulo: "Entrar na lista de espera",
+              nota: "A Ananda avisa assim que as inscrições abrirem.",
+            }}
           />
         </Secao>
 
